@@ -9,3 +9,8 @@ jobs:
         steps:
             - name: print context
               run: echo "${{ toJSON(github) }}"
+            - name: print info
+              run: |
+                echo "Issue title: ${{ github.event.issue.title }}"
+                echo "Issue body: ${{ github.event.issue.body }}"
+                echo "Issue body: ${{ github.event.issue.user.login }}"
